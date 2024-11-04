@@ -7,10 +7,10 @@ class Solution {
        
        long long sum=0;
        while(i<j){
-           sum+=abs(arr[i]-arr[j]) + abs(arr[i+1]-arr[j]);
+           sum+=(arr[j]-arr[i]) + (arr[j]-arr[i+1]);
            i++,j--;
        }
-       sum+=abs(arr[i]-arr[0]);
+       sum+=arr[n/2]-arr[0];
        return sum;
     }
 };
