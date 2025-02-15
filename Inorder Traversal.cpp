@@ -1,17 +1,17 @@
-class Solution {
+ class Solution {
   public:
     // Function to return a list containing the inorder traversal of the tree.
-   void solve(Node* node, vector<int>&ans){
-        if(!node) return;
-        solve(node->left, ans);
-        ans.push_back(node->data);
-        solve(node->right, ans);
-    }
     
+    void inorder(Node* root, vector<int>&ans){
+        if(root!=NULL){
+            inorder(root->left,ans);
+            ans.push_back(root->data);
+            inorder(root->right,ans);
+        }
+    }
     vector<int> inOrder(Node* root) {
-        // Your code here
-        vector<int>ans;
-        solve(root, ans);
-        return ans;
+         vector<int>ans;
+         inorder(root,ans);
+         return ans;
     }
 };
