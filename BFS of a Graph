@@ -1,0 +1,27 @@
+class Solution {
+  public:
+    // Function to return Breadth First Traversal of given graph.
+    vector<int> bfs(vector<vector<int>> &adj) {
+ 
+        vector<int>ans; //Stores the BFS traversal order.
+        queue<int>q; //Queue to process nodes in FIFO order.
+        q.push(0); // Start BFS from node 0.
+        unordered_map<int,bool>visited; //Keeps track of visited nodes to prevent revisiting.
+        visited[0] = true; //Mark node 0 as visited.
+        while(!q.empty()){
+            int frontNode = q.front(); //Take the front node from the queue.
+            q.pop();
+            ans.push_back(frontNode);//dd the node to the result.
+            
+            for(auto i: adj[frontNode]){  //Traverse all adjacent nodes of frontNode.
+
+
+                if(!visited[i]){
+                    q.push(i); //Push it into the queue.
+                    visited[i] = true; // Mark it as visited.
+                }
+            }
+        }
+        return ans;
+    }
+};
