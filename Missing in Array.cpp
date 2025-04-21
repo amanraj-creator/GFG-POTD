@@ -13,3 +13,17 @@ class Solution {
        return (totalSum-arrSum);
     }
 };
+
+// UPDATE
+class Solution {
+  public:
+    int missingNum(vector<int>& arr) {
+        long long int sum=0;
+        long long int size=arr.size()+1; // 1 ELEMENT IS LESS THAT'S WHY
+        long long int org_sum=(size*(size+1))/2;
+        for(auto X:arr){
+            sum+=X;
+        }
+        return (org_sum-sum);
+    }
+};
