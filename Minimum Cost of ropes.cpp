@@ -18,3 +18,25 @@ class Solution {
        return cost;
     }
 };
+
+// modified
+class Solution {
+  public:
+    int minCost(vector<int>& arr) {
+        // code here
+        int res=0;
+        priority_queue<int,vector<int>,greater<int>>pq;
+        for(int & a:arr){
+            pq.push(a);
+        }
+        while(pq.size()>1){
+            int f=pq.top();
+            pq.pop();
+            int s=pq.top();
+            pq.pop();
+            res+=(f+s);
+            pq.push(f+s);
+        }
+        return res;
+    }
+};
